@@ -1,35 +1,45 @@
 const envelope = document.getElementById("envelope");
+const paper = document.getElementById("paper");
 const letter = document.getElementById("letter");
-const confetti = document.getElementById("confetti");
+const confetti = document.getElementById("confetti-container");
 
 let step = 0;
 
+// STEP 1: Open envelope
 envelope.addEventListener("click", () => {
-  step++;
+  if (step !== 0) return;
 
-  if (step === 1) {
-    envelope.classList.add("open");
-  }
+  envelope.classList.add("open");
+  paper.classList.remove("hidden");
 
-  if (step === 2) {
-    envelope.style.display = "none";
-    letter.classList.remove("hidden");
+  setTimeout(() => {
+    paper.classList.add("slide");
     burstConfetti();
-  }
+  }, 400);
+
+  step = 1;
 });
 
+// STEP 2: Open letter
+paper.addEventListener("click", () => {
+  if (step !== 1) return;
+
+  paper.classList.add("hidden");
+  letter.classList.remove("hidden");
+  burstConfetti();
+
+  step = 2;
+});
+
+// CONFETTI FUNCTION
 function burstConfetti() {
   confetti.innerHTML = "";
 
   for (let i = 0; i < 20; i++) {
-    const span = document.createElement("span");
-    span.innerText = "🎉";
-    span.style.left = Math.random() * 100 + "%";
-    span.style.top = "0px";
-    confetti.appendChild(span);
+    const piece = document.createElement("span");
+    piece.innerText = "🎉";
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.top = "0px";
+    confetti.appendChild(piece);
   }
-
-  setTimeout(() => {
-    confetti.innerHTML = "";
-  }, 1300);
 }
