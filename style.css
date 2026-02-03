@@ -1,129 +1,160 @@
 * {
   box-sizing: border-box;
+  font-family: "Georgia", serif;
 }
 
 body {
   margin: 0;
   background: #fdecef;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  font-family: Georgia, cursive;
 }
 
-.wrapper {
+.stage {
   width: 100%;
-  max-width: 360px;
+  max-width: 390px;
+  position: relative;
   text-align: center;
-  position: relative;
 }
 
-/* ENVELOPE */
+/* ================= ENVELOPE ================= */
+
 .envelope {
+  width: 300px;
+  height: 190px;
+  background: #f7b1c8;
+  border-radius: 18px;
   position: relative;
-  width: 260px;
-  height: 170px;
   margin: auto;
+  cursor: pointer;
+  perspective: 800px;
 }
 
-.body {
-  background: #f7b2c4;
+.envelope-body {
   width: 100%;
   height: 100%;
-  border-radius: 0 0 18px 18px;
+  background: #f7b1c8;
+  border-radius: 18px;
 }
 
-.flap {
+.envelope-flap {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
-  background: #f48fb1;
-  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  height: 50%;
+  background: #f08aa9;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
   transform-origin: top;
-  transition: transform 0.6s;
+  transition: transform 0.8s ease;
 }
 
-.tap {
-  margin-top: 10px;
-  color: #b23a48;
-}
-
-.envelope.open .flap {
+.envelope.open .envelope-flap {
   transform: rotateX(180deg);
 }
 
-/* LETTER */
-.letter {
-  background: white;
-  margin-top: 20px;
-  padding: 18px;
-  border-radius: 20px;
-  animation: slideUp 0.6s ease;
+.envelope-text {
+  margin-top: 200px;
+  color: #b0506e;
 }
 
-.hidden {
-  display: none;
+/* ================= PAPER ================= */
+
+.paper {
+  width: 250px;
+  height: 150px;
+  background: white;
+  border-radius: 10px;
+  margin: -140px auto 0;
+  padding: 20px;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+
+.paper.slide {
+  transform: translateY(-140px);
+}
+
+.paper-text {
+  color: #a15c74;
+}
+
+/* ================= LETTER ================= */
+
+.letter {
+  background: white;
+  border-radius: 20px;
+  padding: 18px;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.letter-left,
+.letter-center,
+.letter-right {
+  flex: 1;
+}
+
+/* LEFT TEXT */
+.text-box {
+  background: #fdecef;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* CENTER PHOTO */
+.letter-center h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
 }
 
 .photo {
   width: 100%;
   border-radius: 12px;
-  margin: 10px 0;
 }
 
-.text {
-  font-size: 14px;
-}
-
-/* NEXT */
-.next-area {
-  margin-top: 10px;
-}
-
+/* RIGHT BUTTON */
 .dog {
-  width: 70px;
+  width: 90px;
   display: block;
   margin: auto;
 }
 
-button {
-  margin-top: 6px;
+.next-btn {
+  margin-top: 10px;
   background: #ff7aa2;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
   color: white;
-  font-size: 15px;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-/* CONFETTI */
-#confetti span {
+/* ================= CONFETTI ================= */
+
+#confetti-container span {
   position: absolute;
-  font-size: 22px;
-  animation: fall 1.2s ease-out forwards;
+  font-size: 26px;
+  animation: confetti-fall 1.4s ease-out forwards;
 }
 
-/* ANIMATIONS */
-@keyframes fall {
-  from {
-    transform: translateY(-40px) rotate(0deg);
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0);
     opacity: 1;
   }
-  to {
-    transform: translateY(120px) rotate(360deg);
+  100% {
+    transform: translateY(260px) rotate(360deg);
     opacity: 0;
   }
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* ================= HELPERS ================= */
+
+.hidden {
+  display: none;
 }
