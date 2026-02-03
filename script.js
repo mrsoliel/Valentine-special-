@@ -1,44 +1,23 @@
-const envelope = document.getElementById("envelope");
-const paper = document.getElementById("paper");
-const letter = document.getElementById("letter");
-const confetti = document.getElementById("confetti");
-
 let step = 0;
 
-envelope.addEventListener("click", () => {
+const envelope = document.getElementById("envelope");
+const hint = document.getElementById("hint");
 
-  if (step === 0) {
-    // STEP 1 → OPEN ENVELOPE
-    envelope.classList.add("open");
-    step++;
-    return;
-  }
+envelope.addEventListener("click", () => {
+  step++;
 
   if (step === 1) {
-    // STEP 2 → PAPER SLIDES OUT
-    envelope.classList.add("paper-out");
-    step++;
-    return;
+    envelope.classList.add("open");
+    hint.innerText = "Tap again 💌";
   }
 
   if (step === 2) {
-    // STEP 3 → PAPER UNFOLDS + CONFETTI
-    paper.classList.add("unfold");
-    letter.classList.remove("hidden");
-    burstConfetti();
-    step++;
+    envelope.classList.add("peek");
+    hint.innerText = "One more tap 💖";
   }
 
+  if (step === 3) {
+    envelope.classList.add("unfold");
+    hint.style.display = "none";
+  }
 });
-
-function burstConfetti() {
-  confetti.innerHTML = "";
-
-  for (let i = 0; i < 30; i++) {
-    const c = document.createElement("span");
-    c.textContent = "🎉";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.top = "-20px";
-    confetti.appendChild(c);
-  }
-}
