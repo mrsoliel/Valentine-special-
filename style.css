@@ -130,4 +130,16 @@ body {
 
 /* Step 3 → paper fully out + unfolds */
 .unfold #paper {
-  height: 260
+  height: 260px;
+  transform: translateX(-50%) translateY(-130%);
+}
+
+.unfold #paper-content {
+  opacity: 1;
+}
+
+/* HINT */
+#hint {
+  margin-top: 26px;
+  color: #b35c70;
+}
