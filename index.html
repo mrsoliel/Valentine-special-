@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forever Together ❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Letter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="wrapper">
+<!-- CONFETTI CONTAINER -->
+<div id="confetti-container"></div>
 
-  <!-- Confetti -->
-  <div id="confetti"></div>
+<!-- MAIN WRAPPER -->
+<div class="stage">
 
-  <!-- Envelope -->
+  <!-- ENVELOPE -->
   <div class="envelope" id="envelope">
-    <div class="flap"></div>
-    <div class="body"></div>
-    <p class="tap">Tap to open 💌</p>
+    <div class="envelope-flap"></div>
+    <div class="envelope-body"></div>
+    <div class="envelope-text">Tap to open 💌</div>
   </div>
 
-  <!-- Letter -->
+  <!-- PAPER -->
+  <div class="paper hidden" id="paper">
+    <div class="paper-text">Tap the letter ✨</div>
+  </div>
+
+  <!-- LETTER -->
   <div class="letter hidden" id="letter">
-    <h2>FOREVER TOGETHER</h2>
 
-    <img
-      src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg"
-      class="photo"
-      alt="Us"
-    >
+    <!-- LEFT -->
+    <div class="letter-left">
+      <div class="text-box">
+        I am so thankful to call you mine.<br><br>
+        The last 1 and half years have been<br>
+        the best part of my life.
+      </div>
+    </div>
 
-    <p class="text">
-      I am so thankful to call you mine.<br>
-      The last 1 and half years<br>
-      have been the best part of my life.
-    </p>
+    <!-- CENTER -->
+    <div class="letter-center">
+      <h2>FOREVER TOGETHER</h2>
+      <img
+        src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg"
+        class="photo"
+        alt="Us"
+      >
+    </div>
 
-    <div class="next-area">
+    <!-- RIGHT -->
+    <div class="letter-right">
       <img
         src="https://i.ibb.co/8gyxPbrF/6587-removebg-preview.png"
         class="dog"
         alt="Dog"
       >
-      <button>NEXT →</button>
+      <button class="next-btn">NEXT →</button>
     </div>
+
   </div>
 
 </div>
