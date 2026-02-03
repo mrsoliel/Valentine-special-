@@ -3,48 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Letter</title>
+  <title>Forever Together</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="confetti"></div>
-
 <div class="scene">
 
   <!-- ENVELOPE -->
-  <div class="envelope" id="envelope">
-
+  <div id="envelope">
     <div class="flap"></div>
+    <div class="body"></div>
 
-    <div class="envelope-body">
+    <!-- PAPER -->
+    <div id="paper">
+      <div id="paper-content">
 
-      <!-- PAPER (HIDDEN INSIDE INITIALLY) -->
-      <div class="paper folded" id="paper">
-        <div class="letter hidden" id="letter">
-
-          <div class="letter-left">
-            <p>I am really thankful to have you in my life.</p>
-          </div>
-
-          <div class="letter-center">
-            <h2>FOREVER<br>TOGETHER</h2>
-            <img src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg">
-          </div>
-
-          <div class="letter-right">
-            <img class="dog" src="https://i.ibb.co/8gyxPbrF/6587-removebg-preview.png">
-            <button class="next">NEXT →</button>
-          </div>
-
+        <div class="text-box">
+          I am really thankful to have you in my life.
         </div>
+
+        <div class="center">
+          <h2>FOREVER<br>TOGETHER</h2>
+          <img class="couple" src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg" alt="Us">
+        </div>
+
+        <div class="right">
+          <img class="dog" src="https://i.ibb.co/8gyxPbrF/6587-removebg-preview.png" alt="Dog">
+          <button class="next">NEXT →</button>
+        </div>
+
       </div>
-
     </div>
-
   </div>
 
-  <p class="hint">Tap 💌</p>
+  <div id="hint">Tap to open 💌</div>
 
 </div>
 
