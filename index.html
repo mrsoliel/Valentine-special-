@@ -8,56 +8,48 @@
 </head>
 <body>
 
-<!-- CONFETTI CONTAINER -->
-<div id="confetti-container"></div>
+<div id="confetti"></div>
 
-<!-- MAIN WRAPPER -->
 <div class="stage">
 
   <!-- ENVELOPE -->
   <div class="envelope" id="envelope">
-    <div class="envelope-flap"></div>
-    <div class="envelope-body"></div>
-    <div class="envelope-text">Tap to open 💌</div>
+    <div class="flap"></div>
+    <div class="body"></div>
+
+    <!-- PAPER STICKING OUT -->
+    <div class="paper-preview" id="paperPreview">
+      <span>Tap 💌</span>
+    </div>
   </div>
 
-  <!-- PAPER -->
-  <div class="paper hidden" id="paper">
-    <div class="paper-text">Tap the letter ✨</div>
-  </div>
-
-  <!-- LETTER -->
+  <!-- FULL LETTER -->
   <div class="letter hidden" id="letter">
 
-    <!-- LEFT -->
-    <div class="letter-left">
-      <div class="text-box">
-        I am so thankful to call you mine.<br><br>
-        The last 1 and half years have been<br>
-        the best part of my life.
+    <div class="letter-inner">
+
+      <!-- LEFT TEXT -->
+      <div class="letter-text">
+        <p>
+          I am so thankful to call you mine.<br><br>
+          The last 1 and half years have been<br>
+          the best part of my life.
+        </p>
       </div>
-    </div>
 
-    <!-- CENTER -->
-    <div class="letter-center">
-      <h2>FOREVER TOGETHER</h2>
-      <img
-        src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg"
-        class="photo"
-        alt="Us"
-      >
-    </div>
+      <!-- CENTER IMAGE -->
+      <div class="letter-image">
+        <h2>FOREVER<br>TOGETHER</h2>
+        <img src="https://i.ibb.co/HTG1hn4n/IMG-20260203-100041.jpg" alt="Us">
+      </div>
 
-    <!-- RIGHT -->
-    <div class="letter-right">
-      <img
-        src="https://i.ibb.co/8gyxPbrF/6587-removebg-preview.png"
-        class="dog"
-        alt="Dog"
-      >
-      <button class="next-btn">NEXT →</button>
-    </div>
+      <!-- RIGHT SIDE -->
+      <div class="letter-right">
+        <img class="dog" src="https://i.ibb.co/8gyxPbrF/6587-removebg-preview.png">
+        <button class="next">NEXT →</button>
+      </div>
 
+    </div>
   </div>
 
 </div>
